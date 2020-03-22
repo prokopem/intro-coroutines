@@ -4,7 +4,7 @@ import contributors.*
 import retrofit2.Response
 
 fun loadContributorsBlocking(service: GitHubService, req: RequestData) : List<User> {
-    val repos = service
+/*    val repos = service
         .getOrgReposCall(req.org)
         .execute() // Executes request and blocks the current thread
         .also { logRepos(req, it) }
@@ -16,7 +16,8 @@ fun loadContributorsBlocking(service: GitHubService, req: RequestData) : List<Us
             .execute() // Executes request and blocks the current thread
             .also { logUsers(repo, it) }
             .bodyList()
-    }.aggregate()
+    }.aggregate()*/
+    return emptyList()
 }
 
 fun <T> Response<List<T>>.bodyList(): List<T> {

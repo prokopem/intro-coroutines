@@ -29,3 +29,7 @@ fun logUsers(repo: Repo, response: Response<List<User>>) {
         log.info("${repo.name}: loaded ${users.size} contributors")
     }
 }
+
+fun logCurrentThread(){
+    log.info("Current thread name: ${Thread.currentThread().name}")
+}

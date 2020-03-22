@@ -8,7 +8,7 @@ import java.util.*
 import java.util.concurrent.atomic.AtomicInteger
 
 fun loadContributorsCallbacks(service: GitHubService, req: RequestData, updateResults: (List<User>) -> Unit) {
-    service.getOrgReposCall(req.org).onResponse { responseRepos ->
+/*    service.getOrgReposCall(req.org).onResponse { responseRepos ->
         logRepos(req, responseRepos)
         val repos = responseRepos.bodyList()
         val allUsers = mutableListOf<User>()
@@ -17,11 +17,11 @@ fun loadContributorsCallbacks(service: GitHubService, req: RequestData, updateRe
                 logUsers(repo, responseUsers)
                 val users = responseUsers.bodyList()
                 allUsers += users
+                updateResults(allUsers.aggregate())
             }
         }
         // TODO: Why this code doesn't work? How to fix that?
-        updateResults(allUsers.aggregate())
-    }
+    }*/
 }
 
 inline fun <T> Call<T>.onResponse(crossinline callback: (Response<T>) -> Unit) {
